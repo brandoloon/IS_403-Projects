@@ -24,4 +24,7 @@ for cust_name in queue_customers:
     else:
         dict_cust_info[cust_name] += randomBurgers()
 
+listSortedCustomers = sorted(dict_cust_info.items(), key=lambda x: x[1], reverse=True)
 
+for customer in listSortedCustomers:
+    print(f'{customer[0].ljust(19)} {customer[1]}')
