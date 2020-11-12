@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def LoginView(request) :
-    return HttpResponse('Login Page')
+    return render(request, 'moviereviews/login.html')
 
 def BrowseView(request) :
     return HttpResponse('Browse Page')
