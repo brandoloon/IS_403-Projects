@@ -6,22 +6,20 @@ def LoginView(request) :
     return render(request, 'moviereviews/login.html')
 
 def BrowseView(request) :
-    return HttpResponse('Browse Page')
+    return render(request, 'moviereviews/browse.html')
 
-def CreateProfileView(request) :
-    return HttpResponse('Create Profile Page')
+def RegisterView(request) :
+    return render(request, 'moviereviews/register.html')
 
-def PersonalMovieView(request) :
-    return HttpResponse('Personal Movie Page')
+def MyReviewsView(request) :
+    return render(request, 'moviereviews/my_reviews.html')
 
-def ProfileSettingsView(request) :
-    return HttpResponse('Profile Settings Page')
+def SettingsView(request) :
+    return render(request, 'moviereviews/settings.html')
 
-def CreateReviewView(request) :
-    return HttpResponse('Create Review Page')
+def NewReviewView(request) :
+    return render(request, 'moviereviews/new_review.html')
 
-def SingleReviewView(request) :
-    return HttpResponse('View Review Page')
+def ReviewView(request) :
+    return render(request, 'moviereviews/review.html')
 
-def FeedView(request) :
-    return HttpResponse('Review Feed Page')
