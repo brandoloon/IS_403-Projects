@@ -1,12 +1,15 @@
 from django.db import models
 from datetime import date
-
+from django.contrib.auth.models import User
 # Create your models here.
+
+class Movie(models.Model):
+    title = models.CharField(max_length=50)
 class Review(models.Model):
-    id = models.AutoField(auto_created=True, primary_key=True)
     user = models.CharField(max_length=30)
-    movie = models.CharField(max_length=50)
+    movie = models.ForeignKey(Movie, models.CASCADE)
     rating = models.FloatField()
     description = models.TextField()
     date = models.DateField(default=date.today())
+
 
