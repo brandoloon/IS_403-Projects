@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Movie(models.Model):
     title = models.CharField(max_length=50)
 class Review(models.Model):
-    user = models.CharField(max_length=30)
+    user = models.ForeignKey(User, models.CASCADE)
     movie = models.ForeignKey(Movie, models.CASCADE)
     rating = models.FloatField()
     description = models.TextField()
