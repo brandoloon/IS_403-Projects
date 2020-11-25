@@ -3,11 +3,10 @@ from .models import Review, Movie
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ['movie_title', 'user']
-    def movie_title(self, obj):
-        return obj.movie.title
+    list_display = ['movie', 'user']
+    
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ['title',]
+    pass
     

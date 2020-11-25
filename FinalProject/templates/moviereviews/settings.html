@@ -4,8 +4,24 @@
     Settings
 {% endblock %}
 
-{% block content %}
+{% block page-content %}
+<h1 class="h3 mb-4 text-gray-800">Settings</h1>
+  <div id="settings_form">
+        <form> 
+            <label for="first_name">Change First Name: </label> 
+            <input id= "first_name" type= "text" name="first_name" value="old first name"/> <br>
+            <label for="last_name">Change Last Name: </label>
+            <input id= "last_name" type= "text" name="last_name" value="old last name"/> <br>
+            <label for="email">Change Email: </label>
+            <input id= "email" type= "text" name="email" value="old email"/> <br>
+            <label for="new_profile_img">Change Profile Pic:</label>
+            <input type="file" id="new_profile_img" name="new_profile_img" accept="image/*"> <br>
+            <input type="submit" value="Save Changes">
 
+        </form>
+        
+
+    </div>
 
 {{block.super}}
 {%endblock%}
