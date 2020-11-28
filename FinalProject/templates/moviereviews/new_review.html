@@ -7,17 +7,17 @@
 {% block page-content %}
     <h1 class="h3 mb-4 text-gray-800">Create New Review</h1>
     <div id="new_review_form">
-        <form> 
-            <label for="movie_title">Enter Movie Title: </label> 
-            <input id= "movie_title" type= "text" name="movie_title"/> <br>
-            <label for="movie_rating">Enter Movie Rating (1-10): </label>
-            <input id= "movie_rating" type= "range" min="0" max="10" name="movie_rating"/> <br>
-            <label for="review_description">Type Review Here: </label><br>
-            <textarea id="review_description" name="review_description">Enter text here...</textarea> <br>
+        <form method="post">
+        {% csrf_token %}
+            <label for="movie">Enter Movie Title: </label>
+            <input id="movie" type="text" name="movie"/> <br>
+            <label for="rating">Enter Movie Rating (1-10): </label>
+            <input id="rating" type="range" min="0" max="10" name="rating"/> <br>
+            <label for="description">Type Review Here: </label><br>
+            <textarea id="description" name="description">Enter text here...</textarea> <br>
             <input type="submit" value="Save Review">
-
         </form>
-        
+
 
     </div>
 

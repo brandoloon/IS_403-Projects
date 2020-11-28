@@ -7,16 +7,22 @@
 
 {% block page-content %}
     <h1 class="h3 mb-4 text-gray-800">Browse</h1>
-    {% for review in 'reviews' %}
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+    <div class="container-fluid">
+        <div class="row">
+            {% for review in reviews %}
+            <div class="container">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">{{review.movie}} - reviewed by {{review.user}}</h6>
+                    </div>
+                    <div class="card-body">
+                        {{review.description}}
+                        <br><br>
+                        {{review.date}}
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                The styling for this basic card example is created by using default Bootstrap
-                utility classes. By using utility classes, the style of the card component can be
-                easily modified with no need for any custom CSS!
-            </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </div>
 {%endblock%}
