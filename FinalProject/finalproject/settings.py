@@ -80,10 +80,10 @@ DATABASES = {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': 'moviereviews',
     'USER': 'postgres',
-    'PASSWORD': '1234',
+    'PASSWORD': 'asdf',
     'HOST': 'localhost'
     }
-}  
+}
 
 
 # Password validation
@@ -104,6 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_REDIRECT_URL = 'browse'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
