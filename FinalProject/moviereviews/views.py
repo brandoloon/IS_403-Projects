@@ -12,6 +12,9 @@ def LoginView(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
+            context = {
+                'reviews': Review.objects.all()
+            }
             return render(request, 'moviereviews/browse.html')
         else:
             return render(request, 'moviereviews/login.html')
