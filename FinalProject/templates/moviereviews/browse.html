@@ -3,16 +3,17 @@
     Browse
 {% endblock %}
 
-
+{% block page-title %}
+    <h1 class="h3 mb-4 text-gray-800 my-auto">Browse</h1>
+{% endblock page-title %}
 
 {% block page-content %}
-    <h1 class="h3 mb-4 text-gray-800">Browse</h1>
     <div class="container-fluid">
         <div class="row">
             {% for review in reviews %}
             <div class="container">
-                <div class="card shadow mb-4 col-lg-4">
-                    <div class="card-header py-3">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 browse-header" onclick="location.href='{% url 'review' review.id %}'">
                         <h6 class="m-0 font-weight-bold text-primary">{{review.movie}} - reviewed by {{review.user}}</h6>
                     </div>
                     <div class="card-body">

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
@@ -12,10 +12,7 @@ def LoginView(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            context = {
-                'reviews': Review.objects.all()
-            }
-            return render(request, 'moviereviews/browse.html')
+            return redirect('browse')
         else:
             return render(request, 'moviereviews/login.html')
 
@@ -56,6 +53,7 @@ def SettingsView(request):
         request.user.first_name=request.POST['first_name']
         request.user.last_name=request.POST['last_name']
         request.user.email=request.POST['email']
+        request.user.save()
 
     return render(request, 'moviereviews/settings.html')
 
@@ -73,6 +71,8 @@ def NewReviewView(request) :
         )
     return render(request, 'moviereviews/new_review.html')
 
-def ReviewView(request):
-    return render(request, 'moviereviews/review.html')
+def ReviewView(request, review_id):
+    review = Review.objects.filter(id=review_id)[0]
+    context = {'review':review}
+    return render(request, 'moviereviews/review.html', context)
 
