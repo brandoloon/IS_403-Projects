@@ -9,15 +9,23 @@
   <div id="settings_form">
         <form method="post">
             {% csrf_token %}
-            <label for="first_name">Change First Name: </label> 
-            <input id= "first_name" type= "text" name="first_name" value="{{ user.first_name }}"/> <br>
-            <label for="last_name">Change Last Name: </label>
-            <input id= "last_name" type= "text" name="last_name" value="{{user.last_name}}"/> <br>
-            <label for="email">Change Email: </label>
-            <input id= "email" type= "text" name="email" value="{{user.email}}"/> <br>
-            <label for="new_profile_img">Change Profile Pic:</label>
-            <input type="file" id="new_profile_img" name="new_profile_img" accept="image/*"> <br>
-            <input type="submit" value="Save Changes">
+            <div class="form-grid">
+                <label for="first_name">Change First Name: </label> 
+                <input id= "first_name" type= "text" name="first_name" value="{{ user.first_name }}"/> 
+                <label for="last_name">Change Last Name: </label>
+                <input id= "last_name" type= "text" name="last_name" value="{{user.last_name}}"/> 
+                <label for="email">Change Email: </label>
+                <input id= "email" type= "text" name="email" value="{{user.email}}"/> 
+                <label for="new_profile_img">Change Profile Pic:</label>
+                <input type="file" id="new_profile_img" name="new_profile_img" accept="image/*"> 
+                <button type="submit" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check">
+                        </i>
+                    </span>
+                    <span class="text">Save Changes</span>
+                </button>
+            </div>
         </form>
 
 
