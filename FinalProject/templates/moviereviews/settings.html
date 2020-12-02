@@ -3,9 +3,10 @@
 {% block title %}
     Settings
 {% endblock %}
-
+{% block page-title %}
+    <h1 class="h3 mb-4 text-gray-800 my-auto">Settings</h1>
+{% endblock page-title %}
 {% block page-content %}
-<h1 class="h3 mb-4 text-gray-800">Settings</h1>
   <div id="settings_form">
         <form method="post">
             {% csrf_token %}

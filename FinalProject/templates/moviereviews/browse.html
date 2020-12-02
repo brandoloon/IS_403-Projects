@@ -5,6 +5,17 @@
 
 {% block page-title %}
     <h1 class="h3 mb-4 text-gray-800 my-auto">Browse</h1>
+    <form method="post" class="d-none d-sm-inline-block form-inline ml-auto my-2 my-md-0 mw-100 navbar-search">
+        {% csrf_token %}
+        <div class="input-group">
+            <input name="search_param" type="text" class="form-control bg-light border-0 small" placeholder="Search for a movie..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
 {% endblock page-title %}
 
 {% block page-content %}
