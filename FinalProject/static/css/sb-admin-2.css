@@ -11262,8 +11262,7 @@ body.sidebar-toggled footer.sticky-footer {
   grid-template-columns: [labels] auto [controls] 1fr;
   grid-template-rows: 4;
   grid-auto-flow: row;
-  column-gap: 15px;
-  row-gap: 5px;
+  column-gap: 25px;
   margin-bottom: 15px;
   align-items: center;
 }
@@ -11273,6 +11272,7 @@ body.sidebar-toggled footer.sticky-footer {
 .form-grid > textarea {
   grid-column: controls;
   grid-row: auto;
+  row-gap: 5px;
   justify-self: start;
 }
 
