@@ -22,6 +22,13 @@ def BrowseView(request):
     context = {
         'reviews': Review.objects.all(),
     }
+
+    if request.method == 'POST':
+        movies = Movie.objects.filter(title__contains=request.POST['search_param']).values_list('id')
+        context = {
+            'reviews': Review.objects.filter(movie__in=movies)
+        }
+
     return render(request, 'moviereviews/browse.html', context)
 
 def RegisterView(request):

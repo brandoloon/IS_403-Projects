@@ -10,7 +10,7 @@
  <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Movie Reviews</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -38,15 +38,16 @@
                 <tbody>
                 {% for review in reviews %}
                     <tr>
-                        <th>{{review.movie}}</th>
+                        <th><a href="{% url 'review' review.id %}">{{review.movie}}</a></th>
                         <th>{{review.user}}</th>
                         <th>{{review.rating}}</th>
                         <th>{{review.date}}</th>
                         <th><a href="{% url 'edit-review' review.id %}">Edit</a></th>
                         <th>
-                            <form type="post">
+                            <form method="post">
+                                {% csrf_token %}
                                 <input hidden id="review_id" name="review_id" value="{{review.id}}"/>
-                                <input type="submit" value="Delete"/>
+                                <button type="submit">Delete</button>
                             </form>
                         </th>
                     </tr>

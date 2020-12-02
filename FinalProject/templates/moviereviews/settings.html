@@ -3,19 +3,20 @@
 {% block title %}
     Settings
 {% endblock %}
-
+{% block page-title %}
+    <h1 class="h3 mb-4 text-gray-800 my-auto">Settings</h1>
+{% endblock page-title %}
 {% block page-content %}
-<h1 class="h3 mb-4 text-gray-800">Settings</h1>
   <div id="settings_form">
         <form method="post">
             {% csrf_token %}
             <div class="form-grid">
                 <label for="first_name">Change First Name: </label> 
-                <input id= "first_name" type= "text" name="first_name" value="{{ user.first_name }}"/> 
+                <input class="form-control form-control-user" id= "first_name" type= "text" name="first_name" value="{{ user.first_name }}"/> 
                 <label for="last_name">Change Last Name: </label>
-                <input id= "last_name" type= "text" name="last_name" value="{{user.last_name}}"/> 
+                <input class="form-control form-control-user" id= "last_name" type= "text" name="last_name" value="{{user.last_name}}"/> 
                 <label for="email">Change Email: </label>
-                <input id= "email" type= "text" name="email" value="{{user.email}}"/> 
+                <input class="form-control form-control-user" id= "email" type= "text" name="email" value="{{user.email}}"/> 
                 <label for="new_profile_img">Change Profile Pic:</label>
                 <input type="file" id="new_profile_img" name="new_profile_img" accept="image/*"> 
                 <button type="submit" class="btn btn-primary btn-icon-split">

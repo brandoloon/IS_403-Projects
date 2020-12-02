@@ -13,7 +13,7 @@
             <div class="form-grid">
             {% csrf_token %}
                 <label for="movie">Enter Movie Title: </label>
-                <input id="movie" type="text" name="movie" value="{{review.movie}}"/>
+                <input class="form-control form-control-user" id="movie" type="text" name="movie" value="{{review.movie}}"/>
                 <p>Enter Movie Rating:</p>
                 <fieldset class="rating">
                     <input type="radio" id="star5" name="rating" value="5" {% if review.rating == 5 %}checked{% endif %} /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
@@ -28,7 +28,7 @@
                     <input type="radio" id="starhalf" name="rating" value=".5" {% if review.rating == .5 %}checked{% endif %}/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                 </fieldset>
                 <label for="description">Type Review Here: </label>
-                <textarea id="description" name="description">{{review.description}}</textarea>
+                <textarea class="form-control form-control-user" id="description" name="description">{{review.description}}</textarea>
                 <button type="submit" class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                         <i class="fas fa-check">
