@@ -42,6 +42,9 @@ def RegisterView(request):
     return render(request, 'moviereviews/register.html')
 
 def MyReviewsView(request):
+    if request.method == 'POST':
+        Review.objects.filter(id=request.POST['review_id']).delete()
+
     data = Review.objects.filter(user=request.user)
     context = {
         'reviews': data,
@@ -73,6 +76,24 @@ def NewReviewView(request) :
 
 def ReviewView(request, review_id):
     review = Review.objects.filter(id=review_id)[0]
-    context = {'review':review}
+    context = {
+        'review': review,
+    }
     return render(request, 'moviereviews/review.html', context)
 
+def EditReviewView(request, review_id):
+    edited_review = Review.objects.get(id=review_id)
+    context = {
+        'review': edited_review,
+    }
+    if request.method == 'POST':
+        title = request.POST['movie']
+        rating = request.POST['rating']
+        description = request.POST['description']
+        movie, created = Movie.objects.get_or_create(title=title)
+        edited_review.title = title
+        edited_review.rating = rating
+        edited_review.description = description
+        edited_review.movie = movie
+
+    return render(request, 'moviereviews/edit_review.html', context)

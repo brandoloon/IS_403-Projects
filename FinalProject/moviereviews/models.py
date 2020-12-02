@@ -9,8 +9,8 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 class Review(models.Model):
-    user = models.ForeignKey(User, models.CASCADE)
-    movie = models.ForeignKey(Movie, models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     rating = models.FloatField()
     description = models.TextField()
     date = models.DateField(default=date.today())

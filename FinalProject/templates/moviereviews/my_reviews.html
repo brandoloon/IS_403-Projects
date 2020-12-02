@@ -3,9 +3,10 @@
 {% block title %}
     My Reviews
 {% endblock %}
-
+{% block page-title %}
+    <h1 class="h3 mb-4 text-gray-800 my-auto">My Reviews</h1>
+{% endblock page-title %}
 {% block page-content %}
-<h1 class="h3 mb-4 text-gray-800">My Reviews</h1>
  <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -20,6 +21,8 @@
                         <th>User</th>
                         <th>Rating</th>
                         <th>Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -28,6 +31,8 @@
                         <th>User</th>
                         <th>Rating</th>
                         <th>Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -37,6 +42,13 @@
                         <th>{{review.user}}</th>
                         <th>{{review.rating}}</th>
                         <th>{{review.date}}</th>
+                        <th><a href="{% url 'edit-review' review.id %}">Edit</a></th>
+                        <th>
+                            <form type="post">
+                                <input hidden id="review_id" name="review_id" value="{{review.id}}"/>
+                                <input type="submit" value="Delete"/>
+                            </form>
+                        </th>
                     </tr>
                 {% endfor %}
                 </tbody>
