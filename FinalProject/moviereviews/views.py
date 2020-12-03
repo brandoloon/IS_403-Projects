@@ -24,7 +24,7 @@ def BrowseView(request):
     }
 
     if request.method == 'POST':
-        movies = Movie.objects.filter(title__contains=request.POST['search_param']).values_list('id')
+        movies = Movie.objects.filter(title__icontains=request.POST['search_param']).values_list('id')
         context = {
             'reviews': Review.objects.filter(movie__in=movies)
         }

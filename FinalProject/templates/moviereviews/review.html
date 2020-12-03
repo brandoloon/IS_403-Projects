@@ -4,7 +4,7 @@
     Review
 {% endblock %}
 {% block page-title %}
-    <h1 class="h3 mb-4 text-gray-800 my-auto">{{revview.movie}} by {{review.user}}</h1>
+    <h1 class="h3 mb-4 text-gray-800 my-auto">{{review.movie}} by {{review.user}}</h1>
 {% endblock page-title %}
 
 {% block page-content %}
@@ -14,25 +14,24 @@
                 <h6 class="m-0 font-weight-bold text-primary">{{review.movie}}</h6>
             </div>
             <div class="card-body">
-                <p>Rating: 
-                <fieldset class="rating">
-                    <input type="radio" disabled id="star5" name="rating" value="5" {% if review.rating == 5 %}checked{% endif %} /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" disabled id="star4half" name="rating" value="4.5" {% if review.rating == 4.5 %}checked{% endif %}/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                    <input type="radio" disabled id="star4" name="rating" value="4" {% if review.rating == 4 %}checked{% endif %}/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" disabled id="star3half" name="rating" value="3.5" {% if review.rating == 3.5 %}checked{% endif %}/><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                    <input type="radio" disabled id="star3" name="rating" value="3" {% if review.rating == 3 %}checked{% endif %}/><label class = "full" for="star3" title="Meh - 3 stars"></label>
-                    <input type="radio" disabled id="star2half" name="rating" value="2.5" {% if review.rating == 2.5 %}checked{% endif %}/><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                    <input type="radio" disabled id="star2" name="rating" value="2" {% if review.rating == 2 %}checked{% endif %}/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                    <input type="radio" disabled id="star1half" name="rating" value="1.5" {% if review.rating == 1.5 %}checked{% endif %}/><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                    <input type="radio" disabled id="star1" name="rating" value="1" {% if review.rating == 1 %}checked{% endif %}/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                    <input type="radio" disabled id="starhalf" name="rating" value=".5" {% if review.rating == .5 %}checked{% endif %}/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                </fieldset>
-                </p>
-                {{review.description}}
-                <br>
-                <p>By {{review.user}}</p>
-                <br>
-                {{review.date}}
+                <div class="form-grid">
+                    <p>Rating: </p>
+                    <fieldset class="rating">
+                        <input type="radio" disabled id="star5" name="rating" value="5" {% if review.rating == 5 %}checked{% endif %} /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" disabled id="star4half" name="rating" value="4.5" {% if review.rating == 4.5 %}checked{% endif %}/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" disabled id="star4" name="rating" value="4" {% if review.rating == 4 %}checked{% endif %}/><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" disabled id="star3half" name="rating" value="3.5" {% if review.rating == 3.5 %}checked{% endif %}/><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" disabled id="star3" name="rating" value="3" {% if review.rating == 3 %}checked{% endif %}/><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" disabled id="star2half" name="rating" value="2.5" {% if review.rating == 2.5 %}checked{% endif %}/><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" disabled id="star2" name="rating" value="2" {% if review.rating == 2 %}checked{% endif %}/><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" disabled id="star1half" name="rating" value="1.5" {% if review.rating == 1.5 %}checked{% endif %}/><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" disabled id="star1" name="rating" value="1" {% if review.rating == 1 %}checked{% endif %}/><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" disabled id="starhalf" name="rating" value=".5" {% if review.rating == .5 %}checked{% endif %}/><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset>
+                </div>
+                <p>{{review.description}}</p>
+                <p class="sidebar-heading">By {{review.user}}</p>
+                <p class="sidebar-heading">{{review.date}}</p>
             </div>
         </div>
     </div>
