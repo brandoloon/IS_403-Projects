@@ -227,7 +227,6 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: 0.5rem;
 }
 
 button {
@@ -11247,7 +11246,6 @@ body.sidebar-toggled footer.sticky-footer {
   cursor: pointer;
 }
 /* star rating stuff */
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 
 /****** Style Star Rating Widget *****/
@@ -11263,7 +11261,6 @@ body.sidebar-toggled footer.sticky-footer {
   grid-template-rows: 4;
   grid-auto-flow: row;
   column-gap: 15px;
-  margin-bottom: 15px;
   align-items: center;
 }
 
@@ -11289,7 +11286,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .smol {
-  font-size: 0.5rem !important;
+  font-size: 0.5rem;
 }
 
 .rating > input { display: none; } 

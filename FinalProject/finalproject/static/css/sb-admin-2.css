@@ -227,7 +227,6 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: 0.5rem;
 }
 
 button {
@@ -11262,7 +11261,7 @@ body.sidebar-toggled footer.sticky-footer {
   grid-template-rows: 4;
   grid-auto-flow: row;
   column-gap: 15px;
-  margin-bottom: 15px;
+  row-gap: 10px;
   align-items: center;
 }
 
@@ -11275,7 +11274,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .form-grid > label,
-.form-grid > p {
+.form-grid > div {
   grid-column: labels;
   grid-row: auto;
   justify-self: start;

@@ -15,7 +15,7 @@
             </div>
             <div class="card-body">
                 <div class="form-grid">
-                    <p>Rating: </p>
+                    <div>Rating: </div>
                     <fieldset class="rating">
                         <input type="radio" disabled id="star5" name="rating" value="5" {% if review.rating == 5 %}checked{% endif %} /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                         <input type="radio" disabled id="star4half" name="rating" value="4.5" {% if review.rating == 4.5 %}checked{% endif %}/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
@@ -30,8 +30,8 @@
                     </fieldset>
                 </div>
                 <p>{{review.description}}</p>
-                <p class="sidebar-heading">By {{review.user}}</p>
-                <p class="sidebar-heading">{{review.date}}</p>
+                <div class="small">By {{review.user}}</div>
+                <div class="small">{{review.date}}</div>
             </div>
         </div>
     </div>

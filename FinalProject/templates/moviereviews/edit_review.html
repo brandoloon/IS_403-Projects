@@ -14,7 +14,7 @@
             {% csrf_token %}
                 <label for="movie">Enter Movie Title: </label>
                 <input class="form-control form-control-user" id="movie" type="text" name="movie" value="{{review.movie}}"/>
-                <p>Enter Movie Rating:</p>
+                <div>Enter Movie Rating:</div>
                 <fieldset class="rating">
                     <input type="radio" id="star5" name="rating" value="5" {% if review.rating == 5 %}checked{% endif %} /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                     <input type="radio" id="star4half" name="rating" value="4.5" {% if review.rating == 4.5 %}checked{% endif %}/><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
